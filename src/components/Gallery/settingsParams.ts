@@ -1,19 +1,5 @@
-import {
-  createSettingsParams,
-  SettingsParamType,
-} from 'yoshi-flow-editor/tpa-settings';
-import applicationJson from '../../../.application.json';
+import { createSettingsParams } from "yoshi-flow-editor/tpa-settings";
 
-export type ISettingsParams = {
-  greetingsText: SettingsParamType.Text;
-};
+export type ISettingsParams = {};
 
-export default createSettingsParams<ISettingsParams>({
-  greetingsText: {
-    type: SettingsParamType.Text,
-    getDefaultValue: ({ t }) =>
-      `${t('app.settings.defaults.greetingsPretext')} ${
-        applicationJson.appName
-      }`,
-  },
-});
+export default createSettingsParams<ISettingsParams>({});
