@@ -1,0 +1,79 @@
+{
+  "name": "@wix/wut-exercise",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": {
+    "name": "nitayneeman",
+    "email": "nitayn@wix.com"
+  },
+  "scripts": {
+    "start": "yoshi-flow-editor start",
+    "build": "yoshi-flow-editor build",
+    "lint": "yoshi-flow-editor lint",
+    "test": "npm run test:unit && npm run test:sled",
+    "test:sled": "SLED_PERFER=true sled-test-runner remote",
+    "test:perfer-bundles": "perfer --verbose --json --chunked",
+    "test:unit": "yoshi-flow-editor test",
+    "posttest": "npm run lint",
+    "add": "yoshi-flow-editor add"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,scss}": "yoshi-flow-editor lint"
+  },
+  "eslintConfig": {
+    "extends": "yoshi/editor-flow",
+    "globals": {
+      "Wix": false
+    }
+  },
+  "jest": {
+    "preset": "yoshi-flow-editor"
+  },
+  "dependencies": {
+    "@wix/wix-base-ui": "^3.900.0",
+    "@wix/bi-logger-editor-flow-template": "^1.0.49",
+    "react": "~16.13.0",
+    "react-dom": "~16.13.0",
+    "wix-ui-tpa": "^2.13.1",
+    "yoshi-flow-editor": "^5.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@types/jest": "^26.0.15",
+    "@types/react": "^16.9.15",
+    "@types/react-dom": "^16.9.5",
+    "@wix/perfer": "^1.0.0",
+    "@wix/perfer-sled": "^1.0.0",
+    "@wix/perfer-viewer-utils": "^1.0.0",
+    "@wix/wix-experiments": "^3.0.442",
+    "husky": "~4.2.1",
+    "lint-staged": "^10.0.7",
+    "lodash": "^4.17.11",
+    "puppeteer": "^5.5.0",
+    "@wix/sled-test-runner": "^1.0.819",
+    "typescript": "^4.1.2",
+    "yoshi-style-dependencies": "^5.0.0"
+  },
+  "perfer": {
+    "preset": "yoshi-flow-editor/perfer-preset"
+  },
+  "wix": {
+    "artifact": {
+      "groupId": "com.wixpress",
+      "artifactId": "wut-exercise",
+      "targets": {
+        "static": true
+      }
+    }
+  },
+  "wallaby": {
+    "autoDetect": true
+  }
+}

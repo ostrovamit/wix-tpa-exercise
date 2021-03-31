@@ -1,0 +1,21 @@
+[
+  {
+    "app_name": "wut-exercise",
+    "app_id": "057258fa-0258-4159-a463-ab7d064fbb45",
+    "notifications": {
+      "slack_channels": [
+        "wut-exercise-urgent"
+      ]
+    }
+  },
+  {
+    "app_name": "wut-exercise-Gallery",
+    "app_id": "057258fa-0258-4159-a463-ab7d064fbb45",
+    "widget_id": "323efa0d-5115-4c24-966a-06719bcf05a5",
+    "notifications": {
+      "slack_channels": [
+        "wut-exercise-urgent"
+      ]
+    }
+  }
+]

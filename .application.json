@@ -1,0 +1,18 @@
+{
+  "appDefinitionId": "057258fa-0258-4159-a463-ab7d064fbb45",
+  "appName": "wut-exercise",
+  "sled": {
+    "testUserEmail": "wixqatest.yoshi@gmail.com"
+  },
+  "sentry": {
+    "DSN": "https://c2400de3d5db426eb73a91560f72b808@sentry.wixpress.com/1482",
+    "id": "c2400de3d5db426eb73a91560f72b808",
+    "projectName": "wut-exercise-6l",
+    "teamName": "components-group",
+    "webPage": "https://sentry.wixpress.com/sentry/wut-exercise-6l"
+  },
+ "bi": "@wix/bi-logger-editor-flow-template",
+  "experiments": {
+    "scopes": ["test"]
+  }
+}
