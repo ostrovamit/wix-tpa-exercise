@@ -11,7 +11,7 @@
     "start": "yoshi-flow-editor start",
     "build": "yoshi-flow-editor build",
     "lint": "yoshi-flow-editor lint",
-    "test": "npm run test:unit && npm run test:sled",
+    "test": "npm run test:unit",
     "test:sled": "SLED_PERFER=true sled-test-runner remote",
     "test:perfer-bundles": "perfer --verbose --json --chunked",
     "test:unit": "yoshi-flow-editor test",
