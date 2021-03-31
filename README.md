@@ -1,52 +1,70 @@
-# wut-exercise
+# WUT Exercise
 
-This is an **yoshi editor flow** (out of iframe) project.
+- [Overview](#overview)
+- [Guidelines](#guidelines)
+  - [General](#general)
+  - [Application Behavior](#application-behavior)
+- [How to Start](#how-to-start)
 
-The main idea of Editor Flow is to provide the best developer experience, the most optimized bundle, and a lot of features to reduce boilerplate on the user's side.
+## Overview
 
-Loading experiments and translations, sending errors to sentry, monitoring client-side and server-side rendering time, sled end-to-end testing, providing relevant bi logger, live reload, and local overrides - everything is being provided from the box and works automatically.
+The exercise is to implement a gallery inside OOI application with a basic grid including items:
 
-## Setup 🔧
+<p align="center">
+  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/demo.gif?raw=true" width="800">
+</p>
 
-##### Install dependencies:
+Notice the "Load More" button at the bottom, which loads more items after clicking and then disappears.
 
-```bash
-npm install
-```
+## Guidelines
 
-##### Start the project:
+### General
 
-```bash
-npm start
-```
+- You should use both components and testkits from wix-ui-tpa.
+- You **don't** need to add additional CSS (all needed styles are already implemented), but you do need to wire the style params.
+- You **don't** need to create an application nor widget in the dev center, this repository is already connected to such.
+- All tests should be completed and pass.
+- Consider starting with going over the tests so they would instruct you what to implement next (you'll find in the code parts that you need to complete).
 
-In case you are starting it the first time - the basic editor flow guide will be opened. It includes steps you need to take to finish the configuration.
+### Application Behavior
 
-If `VIEWER_START_URL`, `EDITOR_START_URL` and `ADI_START_URL` were configured - the flow will ask you to press the relevant key on keyboard to open chrome with viewer, editor or ADI urls with local overrides. Then you can just start to develop the out of iframe widget in a production environment with HMR.
+You should implement the missing view according the following instructions.
 
-## Deployment 🚀
+1. The widget title should appear at the top of the page and below a grid of items:
 
-Just commit changes you made and push it to github. The [auto-release](https://github.com/wix-private/devcenter/tree/master/serverless/app-service-autorelease) mechanism is configured from the box.
+<p align="center">
+  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/2.png?raw=true" width="600">
+</p>
 
-> Be sure your app in dev center has `Wix TPA` checkbox enabled.
+Each row contains 3 items and on startup should appear 4 rows at most.
 
-## Testing 🤞
+2. An item should have a title and appropriate image:
 
-The app contains e2e and unit tests.
+<p align="center">
+  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/2.png?raw=true">
+</p>
 
-- **e2e** tests are located under the `sled` directory.
-- **Unit** tests could be found in the components' source directory.
+3. After scrolling down to the edge, there is a button called "Load More":
 
-##### Running tests:
+<p align="center">
+  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/3.png?raw=true" width="600">
+</p>
 
-```bash
-npm test
-```
+The button should be style correctly using these style params (they're already implemented, you just need to use them). Remember, you're not supposed to use vanilla CSS but rather style variables that simulate wiring through the settings panel.
 
-## Useful URLs
+4. Clicking the button loads the rest of the items that we're not rendered on startup:
 
-- [Yoshi Editor Flow](https://bo.wix.com/pages/yoshi/docs/editor-flow/overview)
-- [Viewer Platform ](https://bo.wix.com/wix-docs/client/viewer-platform---ooi)
-- [Editor Platform ](https://bo.wix.com/wix-docs/client/editor-platform)
-- [App's Dev Center Page](https://dev.wix.com/dc3/my-apps/057258fa-0258-4159-a463-ab7d064fbb45/dashboard)
-- [FED Handbook](https://github.com/wix-private/fed-handbook#welcome-to-the-fed-handbook)
+<p align="center">
+  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/4.png?raw=true" width="600">
+</p>
+
+Note that the button should disappear thereafter.
+
+## How to Start
+
+1. Clone this project.
+2. Run `npm install` which will already install for you wix-ui-tpa.
+3. Run `npm start` and click on `1` in order to navigate to a viewer URL and see the initial OOI application containing inside a premade Wix live site.
+4. Run `npm test` to run the tests (they should fail, so don't panic). You can run `npm run test:watch` if you prefer testing in interactive watch mode.
+
+Good luck! 🙃
