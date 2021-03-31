@@ -1,29 +1,21 @@
 import {
+  createStylesParams,
   StyleParamType,
   wixColorParam,
-  wixFontParam,
-  createStylesParams,
 } from 'yoshi-flow-editor/tpa-settings';
 
 type IStylesParams = {
-  backgroundColor: StyleParamType.Color;
-  textFont: StyleParamType.Font;
-  textColor: StyleParamType.Color;
+  buttonBackgroundColor: StyleParamType.Color;
+  buttonBorderRadius: StyleParamType.Number;
 };
 
 export default createStylesParams<IStylesParams>({
-  backgroundColor: {
+  buttonBackgroundColor: {
     type: StyleParamType.Color,
-    getDefaultValue: wixColorParam('color-3'),
+    getDefaultValue: wixColorParam('color-8'),
   },
-  textFont: {
-    type: StyleParamType.Font,
-    getDefaultValue: wixFontParam('Body-M', {
-      size: 20,
-    }),
-  },
-  textColor: {
-    type: StyleParamType.Color,
-    getDefaultValue: wixColorParam('color-5'),
+  buttonBorderRadius: {
+    type: StyleParamType.Number,
+    getDefaultValue: () => 20,
   },
 });

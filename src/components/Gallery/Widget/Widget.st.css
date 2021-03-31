@@ -1,28 +1,22 @@
-:import {
-  -st-from: 'wix-ui-tpa/dist/src/components/Button/Button.st.css';
-  -st-default: Button;
+:vars {
+  marginBetweenElements: 20px;
 }
 
 .root {
-  --backgroundColor: "color(color-2)";
+  font-size: 14px;
   text-align: center;
+  padding: 20px 0;
 }
 
-
-.header {
-  background-color: "color(--backgroundColor)";
-  font: "font(--textFont)";
-  padding: 10px;
-  color: "color(--textColor)";
+.grid {
+  margin-top: value(marginBetweenElements);
 }
 
-.mainButton {
-  -st-extends: Button;
-  -st-mixin: Button(
-    MainBackgroundColor '"--buttonBackgroundColor"'
-  );
+.loadMore {
+  /* Override background color and border radius using the style variables */
+
   padding: 0 20px;
   height: 30px;
-  margin-top: 20px;
-  border-radius: 10px;
+  margin-top: value(marginBetweenElements);
+  cursor: pointer;
 }
