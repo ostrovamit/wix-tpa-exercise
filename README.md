@@ -23,6 +23,7 @@ Notice the "Load More" button at the bottom, which loads more items after clicki
 - You should use both components and testkits from wix-ui-tpa.
 - You **don't** need to add additional CSS (all needed styles are already implemented), but you do need to wire the style params.
 - You **don't** need to create an application nor widget in the dev center, this repository is already connected to such.
+- You **don't** need to implement any data for the items but simply use [it](https://github.com/wix-private/wut-exercise/blob/master/src/components/Gallery/controller.ts#L15).
 - All tests should be completed and pass.
 - Consider starting with going over the tests so they would instruct you what to implement next (you'll find in the code parts that you need to complete).
 
@@ -33,7 +34,7 @@ You should implement the missing view according the following instructions.
 1. The widget title should appear at the top of the page and below a grid of items:
 
 <p align="center">
-  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/2.png?raw=true" width="600">
+  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/1.png?raw=true" width="600">
 </p>
 
 Each row contains 3 items and on startup should appear 4 rows at most.
@@ -41,7 +42,7 @@ Each row contains 3 items and on startup should appear 4 rows at most.
 2. An item should have a title and appropriate image:
 
 <p align="center">
-  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/2.png?raw=true">
+  <img src="https://github.com/wix-private/wut-exercise/blob/master/images/2.png?raw=true" width="400">
 </p>
 
 3. After scrolling down to the edge, there is a button called "Load More":
@@ -50,7 +51,7 @@ Each row contains 3 items and on startup should appear 4 rows at most.
   <img src="https://github.com/wix-private/wut-exercise/blob/master/images/3.png?raw=true" width="600">
 </p>
 
-The button should be style correctly using these style params (they're already implemented, you just need to use them). Remember, you're not supposed to use vanilla CSS but rather style variables that simulate wiring through the settings panel.
+The button should be style correctly using [the style params](https://github.com/wix-private/wut-exercise/blob/master/src/components/Gallery/stylesParams.ts) (they're already implemented, you just need to use them). Remember, you're not supposed to use vanilla CSS but rather style variables that simulate wiring through the settings panel.
 
 4. Clicking the button loads the rest of the items that we're not rendered on startup:
 
