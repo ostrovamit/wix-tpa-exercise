@@ -29,7 +29,7 @@ Notice the "Load More" button at the bottom, which loads more items after clicki
 
 ### Application Behavior
 
-You should implement the missing view according the following instructions.
+You should implement the missing view according to the following instructions.
 
 1. The widget title should appear at the top of the page and below a grid of items:
 
