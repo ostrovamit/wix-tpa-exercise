@@ -66,7 +66,7 @@ Note that the button should disappear thereafter.
 1. Clone this project.
 2. Make sure your Node.js version is 14 (or newer).
 3. Run `npm install` which will already install for you wix-ui-tpa.
-4. Run `npm start` and click on `1` in order to navigate to a viewer URL and see the initial OOI application containing inside a premade Wix live site.
+4. Run `npm start` and click on `1` in order to navigate to a viewer URL and see the initial OOI application contained inside a premade Wix live site.
 5. Run `npm test` to run the tests (they should fail, so don't panic). You can run `npm run test:watch` if you prefer testing in interactive watch mode.
 
 Good luck! 🙃
