@@ -51,7 +51,7 @@ Each row contains 3 items and on startup should appear 4 rows at most.
   <img src="images/3.png" width="600">
 </p>
 
-The button should be style correctly using [the style params](https://github.com/wix-private/wut-exercise/blob/master/src/components/Gallery/stylesParams.ts) (they're already implemented, you just need to use them). Remember, you're not supposed to use vanilla CSS but rather style variables that simulate wiring through the settings panel.
+The button should be styled correctly using the [style params](https://github.com/wix-private/wut-exercise/blob/master/src/components/Gallery/stylesParams.ts) (they're already implemented, you just need to use them). Remember, you're not supposed to use CSS properties at all but rather pass these style params using the style API of the relevant component.
 
 4. Clicking the button loads the rest of the items that were not rendered on startup:
 
