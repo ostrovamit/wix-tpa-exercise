@@ -1,6 +1,11 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import { textTestkitFactory } from 'wix-ui-tpa/dist/src/testkit';
+import {
+  textTestkitFactory,
+  gridTestkitFactory,
+  buttonTestkitFactory,
+} from 'wix-ui-tpa/dist/src/testkit';
+
 import {
   createSettingsParams,
   SettingsObject,
@@ -27,11 +32,11 @@ describe('Widget', () => {
     const textDriver = textTestkitFactory({
       wrapper: baseElement,
       // Task 1: pass the correct dataHook
-      dataHook: 'incorrect-datahook',
+      dataHook: 'widget-title',
     });
 
     // Task 2: correct the following expectation
-    expect(await textDriver.getContent()).toBe('Correct me...');
+    expect(await textDriver.getContent()).toBe('OOI Gallery');
   });
 
   it('renders three items in a row', async () => {
@@ -40,15 +45,35 @@ describe('Widget', () => {
     const baseElement = await findByTestId('gallery-widget');
 
     // Task 3: use the relevant testkit
-
-    // expect(await gridDriver.itemsPerRow()).toBe(3);
+    const gridDriver = gridTestkitFactory({
+      wrapper: baseElement,
+      // Task 1: pass the correct dataHook
+      dataHook: 'grid',
+    });
+    expect(await gridDriver.itemsPerRow()).toBe(3);
   });
 
   it('renders the "loading more" button on startup by default', async () => {
-    // Task 4: complete the test
+    const { TestComponent } = testkit.getWidget(Widget, { settings });
+    const { findByTestId } = render(<TestComponent />);
+    const baseElement = await findByTestId('gallery-widget');
+
+    const buttonDriver = buttonTestkitFactory({
+      wrapper: baseElement,
+      dataHook: 'load-more-button',
+    });
+    expect(await buttonDriver.exists()).toBe(true);
   });
 
   it('hides the "loading more" button after loading all items by clicking it', async () => {
-    // Task 5: complete the test
+    // const { TestComponent } = testkit.getWidget(Widget, { settings });
+    // const { findByTestId } = render(<TestComponent />);
+    // const baseElement = await findByTestId('gallery-widget');
+    // const buttonDriver = buttonTestkitFactory({
+    //   wrapper: baseElement,
+    //   dataHook: 'load-more-button',
+    // });
+    // await buttonDriver.click();
+    // expect(await buttonDriver.exists()).toBe(false);
   });
 });
